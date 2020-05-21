@@ -1,4 +1,4 @@
-package hld.app;
+package com.hld.pics.app;
 
 import java.io.File;
 import java.text.DecimalFormat;
@@ -8,7 +8,7 @@ import java.util.List;
 
 public class OrganizePics {
 
-    private static final String ROOT_FOLDER = "C:\\Users\\hdudash\\Downloads\\";
+    private static final String ROOT_FOLDER = "/home/hld29/";
 
     public static void main(String[] args) {
 		/*
@@ -25,12 +25,12 @@ public class OrganizePics {
 		reader.close();
 		*/
 
-        String folderName = "pics"; // "pics"; "1997-08" //
-        String startingValueYear = "1991-06";
-        String startingValueNumber = "015";
-        boolean reverseNumber = true;
+        String folderName = "Israel"; // "pics"; "1997-08" //
+        String startingValueYear = "2018-10";
+        String startingValueNumber = "439";
+        boolean reverseNumber = false;
 
-        String fullFolderName = ROOT_FOLDER + folderName + "\\";
+        String fullFolderName = ROOT_FOLDER + folderName + "/";
 
         //parse starting number
         String fileNamePrefix = startingValueYear + " ";

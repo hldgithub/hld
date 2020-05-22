@@ -1,4 +1,4 @@
-package com.hld.pics.app;
+package com.hld.pics.apps;
 
 import java.io.File;
 import java.text.DecimalFormat;

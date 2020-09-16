@@ -2,9 +2,10 @@ package com.hld.pics.apps;
 
 import static com.hld.pics.constants.ImageSize.FOUR_BY_SIX;
 import static com.hld.pics.constants.ImageSize.THREE_AND_A_HALF_BY_FIVE;
+import static com.hld.pics.services.PicsSizing.createBorderImage;
+import static com.hld.pics.services.PicsSizing.getScalrImage;
 import static java.lang.System.exit;
 
-import com.hld.pics.services.PicsSizing;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -14,7 +15,7 @@ public class ResizePics {
     public static final String ROOT_FOLDER = "/home/hld29/Downloads/";
 
     public static void main(String[] args) throws Exception {
-        String inFolder = ROOT_FOLDER + "1994_NewJersey";
+        String inFolder = ROOT_FOLDER + "petra";
         String outFolder = inFolder + "_4x6";
 
         //get list of files
@@ -37,11 +38,10 @@ public class ResizePics {
 
             try {
                 // resize image to 3.5 x 5
-                BufferedImage resizeImageJpg = PicsSizing
-                        .getScalrImage(inFile, THREE_AND_A_HALF_BY_FIVE);
+                BufferedImage resizeImageJpg = getScalrImage(inFile, THREE_AND_A_HALF_BY_FIVE);
 
                 // write image to 4x6 print
-                PicsSizing.createBorderImage(resizeImageJpg, resizedFile, FOUR_BY_SIX);
+                createBorderImage(resizeImageJpg, resizedFile, FOUR_BY_SIX);
             } catch (IOException e) {
                 e.printStackTrace();
             }
